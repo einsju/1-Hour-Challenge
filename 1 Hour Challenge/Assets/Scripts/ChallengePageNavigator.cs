@@ -10,14 +10,27 @@ namespace HourChallenge
 
         IList<GameObject> PageComponents => GetComponentsInChildren<Transform>(true).Where(go => go.name.StartsWith("Page_")).Select(go => go.gameObject).ToList();
 
-        GameObject CurrentPage => _pages.FirstOrDefault(p => p.activeSelf);        
+        GameObject CurrentPage => _pages.FirstOrDefault(p => p.activeSelf);
+        GameObject PreviousPage(GameObject fromPage) => _pages[_pages.IndexOf(fromPage) - 1];
+        GameObject NextPage(GameObject fromPage) => _pages[_pages.IndexOf(fromPage) + 1];
 
         void Awake() => _pages = PageComponents;
 
-        public void OpenPage(GameObject page)
+        public void Previous()
         {
-            CurrentPage.SetActive(false);
-            page.SetActive(true);
+            var current = CurrentPage;
+            Deactivate(current);
+            Activate(PreviousPage(current));
         }
+
+        public void Next()
+        {
+            var current = CurrentPage;
+            Deactivate(current);
+            Activate(NextPage(current));
+        }
+
+        void Activate(GameObject page) => page.SetActive(true);
+        void Deactivate(GameObject page) => page.SetActive(false);
     }
 }

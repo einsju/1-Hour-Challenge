@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8834818750490465654}
   - component: {fileID: 716784758807217051}
   - component: {fileID: 3544019031269149224}
+  - component: {fileID: 1933997952717739432}
   m_Layer: 5
   m_Name: Challenge Button
   m_TagString: Untagged
@@ -152,6 +153,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 4790382290379417021}
+--- !u!114 &1933997952717739432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2469447892923712190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86a2ac4f38940c4c9ddd9a1844eb0ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 265b6b3f79b54924795b8b70afa7cf1a, type: 3}
 --- !u!1 &2827430006286419287
 GameObject:
   m_ObjectHideFlags: 0
