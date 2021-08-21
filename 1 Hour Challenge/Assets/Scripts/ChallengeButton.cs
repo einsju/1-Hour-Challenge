@@ -3,13 +3,18 @@ using TMPro;
 
 namespace HourChallenge
 {
-    [ExecuteInEditMode]
+    [ExecuteAlways]
     public class ChallengeButton : MonoBehaviour
     {
         [SerializeField] TMP_Text buttonText;
 
-        void Awake()
+        bool TextIsNumber => int.TryParse(gameObject.name, out _);
+
+        void Awake() => SetChallengeText();
+
+        void SetChallengeText()
         {
+            if (!TextIsNumber) return;
             buttonText.text = gameObject.name;
         }
     }
