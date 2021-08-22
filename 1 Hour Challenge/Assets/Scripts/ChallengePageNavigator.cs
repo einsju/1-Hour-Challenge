@@ -14,10 +14,14 @@ namespace HourChallenge
         GameObject PreviousPage(GameObject fromPage) => _pages[_pages.IndexOf(fromPage) - 1];
         GameObject NextPage(GameObject fromPage) => _pages[_pages.IndexOf(fromPage) + 1];
 
+        bool IsFirstPage => CurrentPage == _pages.First();
+        bool IsLastPage => CurrentPage == _pages.Last();
+
         void Awake() => _pages = PageComponents;
 
         public void Previous()
         {
+            if (IsFirstPage) return;
             var current = CurrentPage;
             Deactivate(current);
             Activate(PreviousPage(current));
@@ -25,6 +29,7 @@ namespace HourChallenge
 
         public void Next()
         {
+            if (IsLastPage) return;
             var current = CurrentPage;
             Deactivate(current);
             Activate(NextPage(current));
