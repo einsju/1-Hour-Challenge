@@ -33,6 +33,6 @@ namespace HourChallenge
         void OnEnable() => _button.onClick.AddListener(ChallengeAccepted);
         void OnDisable() => _button.onClick.RemoveListener(ChallengeAccepted);
 
-        void ChallengeAccepted() => EventManager.OnChallengeAccepted(int.Parse(buttonText.text));
+        void ChallengeAccepted() => EventManager.OnChallengeAccepted(_challengeNumber);
     }
 }
