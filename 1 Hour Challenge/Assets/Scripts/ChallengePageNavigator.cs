@@ -6,6 +6,9 @@ namespace HourChallenge
 {
     public class ChallengePageNavigator : MonoBehaviour
     {
+        [SerializeField] GameObject previousButton;
+        [SerializeField] GameObject nextButton;
+        
         IList<GameObject> _pages;
 
         IList<GameObject> PageComponents => GetComponentsInChildren<Transform>(true).Where(go => go.name.StartsWith("Page_")).Select(go => go.gameObject).ToList();
@@ -25,6 +28,7 @@ namespace HourChallenge
             var current = CurrentPage;
             Deactivate(current);
             Activate(PreviousPage(current));
+            HandleNavigationButtonState();
         }
 
         public void Next()
@@ -33,9 +37,16 @@ namespace HourChallenge
             var current = CurrentPage;
             Deactivate(current);
             Activate(NextPage(current));
+            HandleNavigationButtonState();
         }
 
         void Activate(GameObject page) => page.SetActive(true);
         void Deactivate(GameObject page) => page.SetActive(false);
+
+        void HandleNavigationButtonState()
+        {
+            previousButton.SetActive(!IsFirstPage);
+            nextButton.SetActive(!IsLastPage);
+        }
     }
 }

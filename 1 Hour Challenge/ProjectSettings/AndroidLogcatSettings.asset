@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "LHS0218A10002422",
         "name": "com.einarsen.hourchallenge",
-        "processId": 19904,
+        "processId": 15633,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -102,6 +102,24 @@
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
             "processId": 19904,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 12479,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 13913,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 15633,
             "exited": false
         }
     ],
