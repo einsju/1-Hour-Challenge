@@ -1,3 +1,4 @@
+using HourChallenge.Handlers;
 using UnityEngine;
 
 namespace HourChallenge
@@ -5,23 +6,23 @@ namespace HourChallenge
     public class ChallengePageSwiper : MonoBehaviour
     {
         [SerializeField] float minimumDragDistance = 75f;
-        [SerializeField] ChallengePageNavigator pageNavigator;
-        
-        Vector2 _lastPosition = Vector2.zero;
 
-        bool SwipeAccepted => Mathf.Abs(Input.mousePosition.y - _lastPosition.y) >= minimumDragDistance;
-        bool Next => Input.mousePosition.y > _lastPosition.y;
+        ChallengePageNavigator _pageNavigator;
+        InputHandler _inputHandler;
 
-        bool Touched => Input.GetMouseButtonDown(0);
-        bool Released => Input.GetMouseButtonUp(0);
+        bool SwipeAccepted => Mathf.Abs(_inputHandler.Position.y - _inputHandler.LastPosition.y) >= minimumDragDistance;
+        bool Next => _inputHandler.Position.y > _inputHandler.LastPosition.y;
+
+        void Awake()
+        {
+            _pageNavigator = GetComponent<ChallengePageNavigator>();
+            _inputHandler = GetComponent<InputHandler>();
+        }
 
         void Update()
         {
-            if (Touched) SaveLastPosition();
-            if (Released && SwipeAccepted) Navigate();
+            if (_inputHandler.Released && SwipeAccepted) Navigate();
         }
-
-        void SaveLastPosition() => _lastPosition = Input.mousePosition;
 
         void Navigate()
         {
@@ -34,7 +35,7 @@ namespace HourChallenge
             OpenPreviousPage();
         }
 
-        void OpenNextPage() => pageNavigator.Next();
-        void OpenPreviousPage() => pageNavigator.Previous();
+        void OpenNextPage() => _pageNavigator.Next();
+        void OpenPreviousPage() => _pageNavigator.Previous();
     }
 }
