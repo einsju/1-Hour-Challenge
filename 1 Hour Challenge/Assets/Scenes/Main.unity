@@ -11051,7 +11051,7 @@ GameObject:
   - component: {fileID: 1934325859}
   - component: {fileID: 1934325858}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Best
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11096,7 +11096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 0'
+  m_text: 'SCORE: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5aa116ab1aa24d441bc8a3661bc65b34, type: 2}
   m_sharedMaterial: {fileID: -7600741532229346453, guid: 5aa116ab1aa24d441bc8a3661bc65b34,
@@ -11134,7 +11134,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 8
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

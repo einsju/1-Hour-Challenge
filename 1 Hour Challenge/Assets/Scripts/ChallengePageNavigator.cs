@@ -8,45 +8,46 @@ namespace HourChallenge
     {
         [SerializeField] GameObject previousButton;
         [SerializeField] GameObject nextButton;
-        
-        IList<GameObject> _pages;
+
+        const float ItemsPerPage = 9f;
 
         IList<GameObject> PageComponents => GetComponentsInChildren<Transform>(true).Where(go => go.name.StartsWith("Page_")).Select(go => go.gameObject).ToList();
 
-        GameObject CurrentPage => _pages.FirstOrDefault(p => p.activeSelf);
-        GameObject PreviousPage(GameObject fromPage) => _pages[_pages.IndexOf(fromPage) - 1];
-        GameObject NextPage(GameObject fromPage) => _pages[_pages.IndexOf(fromPage) + 1];
+        GameObject CurrentPage => _pages[_pageNavigator.Page - 1];
+        int PageWithChallenge(int challengeNumber) => Mathf.CeilToInt(challengeNumber / ItemsPerPage);
 
-        GameObject PageWithChallenge(int challengeNumber) => _pages[Mathf.CeilToInt(challengeNumber / 9f) - 1];
+        GameObject[] _pages;
 
-        bool IsFirstPage => CurrentPage == _pages.First();
-        bool IsLastPage => CurrentPage == _pages.Last();
+        PageNavigator _pageNavigator;
 
-        void Awake() => _pages = PageComponents;
+        void Awake()
+        {
+            _pages = PageComponents.ToArray();
+            _pageNavigator = new PageNavigator(_pages.Length);
+        }
 
         public void Previous()
         {
-            if (IsFirstPage) return;
-            var current = CurrentPage;
-            Deactivate(current);
-            Activate(PreviousPage(current));
+            Deactivate(CurrentPage);
+            _pageNavigator.MovePrevious();
+            Activate(CurrentPage);
             HandleNavigationButtonState();
         }
 
         public void Next()
         {
-            if (IsLastPage) return;
-            var current = CurrentPage;
-            Deactivate(current);
-            Activate(NextPage(current));
+            Deactivate(CurrentPage);
+            _pageNavigator.MoveNext();
+            Activate(CurrentPage);
             HandleNavigationButtonState();
         }
 
         public void OpenPageByChallenge(int challengeNumber)
         {
-            if (challengeNumber <= 9) return;
+            if (challengeNumber <= ItemsPerPage) return;
             Deactivate(CurrentPage);
-            Activate(PageWithChallenge(challengeNumber));
+            _pageNavigator.MoveToPage(PageWithChallenge(challengeNumber));
+            Activate(CurrentPage);
             HandleNavigationButtonState();
         }
 
@@ -55,8 +56,8 @@ namespace HourChallenge
 
         void HandleNavigationButtonState()
         {
-            previousButton.SetActive(!IsFirstPage);
-            nextButton.SetActive(!IsLastPage);
+            previousButton.SetActive(!_pageNavigator.IsFirstPage);
+            nextButton.SetActive(!_pageNavigator.IsLastPage);
         }
     }
 }

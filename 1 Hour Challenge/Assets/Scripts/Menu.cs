@@ -13,7 +13,7 @@ namespace HourChallenge
 
         void Awake() => SetHighscore();
 
-        void SetHighscore() => highscore.text = $"Score: {122}";
+        void SetHighscore() => highscore.text = $"SCORE: {122}";
 
         void Start() => SetCurrentChallenge();
 
