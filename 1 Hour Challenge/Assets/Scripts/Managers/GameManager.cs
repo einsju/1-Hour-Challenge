@@ -6,7 +6,7 @@ namespace HourChallenge.Managers
     public class GameManager : MonoBehaviour
     {
         const string ChallengeSceneNamePrefix = "Challenge_";
-        
+
         void OnEnable()
         {
             EventManager.ChallengeAcceptedEventHandler += ChallengeAccepted;

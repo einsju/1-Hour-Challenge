@@ -11,6 +11,9 @@ namespace HourChallenge
         [SerializeField] GameObject locked;
         [SerializeField] TMP_Text buttonText;
         [SerializeField] GameObject video;
+        [SerializeField] Color activationColor;
+
+        public int ChallengeNumber => _challengeNumber;
 
         Button _button;
         int _challengeNumber;
@@ -19,11 +22,11 @@ namespace HourChallenge
         string ButtonText => TextIsNumber ? gameObject.name : "";
         bool ChallengeIsLocked => _challengeNumber > 1;
 
-        void Awake() => _button = GetComponent<Button>();
-        void Start() => InitializeButton();
+        void Awake() => InitializeButton();
 
         void InitializeButton()
         {
+            _button = GetComponent<Button>();
             _challengeNumber = int.Parse(ButtonText);
             locked.SetActive(ChallengeIsLocked);
             video.SetActive(ChallengeIsLocked);
@@ -34,5 +37,11 @@ namespace HourChallenge
         void OnDisable() => _button.onClick.RemoveListener(ChallengeAccepted);
 
         void ChallengeAccepted() => EventManager.OnChallengeAccepted(_challengeNumber);
+
+        public void Activate()
+        {
+            var shadow = GetComponent<Shadow>();
+            shadow.effectColor = activationColor;
+        }
     }
 }

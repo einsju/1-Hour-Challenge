@@ -17,6 +17,8 @@ namespace HourChallenge
         GameObject PreviousPage(GameObject fromPage) => _pages[_pages.IndexOf(fromPage) - 1];
         GameObject NextPage(GameObject fromPage) => _pages[_pages.IndexOf(fromPage) + 1];
 
+        GameObject PageWithChallenge(int challengeNumber) => _pages[Mathf.CeilToInt(challengeNumber / 9f) - 1];
+
         bool IsFirstPage => CurrentPage == _pages.First();
         bool IsLastPage => CurrentPage == _pages.Last();
 
@@ -37,6 +39,14 @@ namespace HourChallenge
             var current = CurrentPage;
             Deactivate(current);
             Activate(NextPage(current));
+            HandleNavigationButtonState();
+        }
+
+        public void OpenPageByChallenge(int challengeNumber)
+        {
+            if (challengeNumber <= 9) return;
+            Deactivate(CurrentPage);
+            Activate(PageWithChallenge(challengeNumber));
             HandleNavigationButtonState();
         }
 

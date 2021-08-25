@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "LHS0218A10002422",
         "name": "com.einarsen.hourchallenge",
-        "processId": 11800,
+        "processId": 20459,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,133 +11,55 @@
         {
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
-            "processId": 4520,
+            "processId": 22838,
             "exited": true
         },
         {
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
-            "processId": 10058,
+            "processId": 23844,
             "exited": true
         },
         {
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
-            "processId": 18204,
+            "processId": 14837,
             "exited": true
         },
         {
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
-            "processId": 30049,
+            "processId": 16783,
             "exited": true
         },
         {
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
-            "processId": 3829,
+            "processId": 17820,
+            "exited": true
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.huawei.android.launcher",
+            "processId": 2574,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.secondarm.taptapdash",
+            "processId": 13736,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 19544,
             "exited": true
         },
         {
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
-            "processId": 4900,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 6778,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 12044,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 13262,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 16947,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 18513,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 29135,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 14413,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 15989,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 19131,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 19904,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 12479,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 13913,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 15633,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 4494,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 7621,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 11800,
+            "processId": 20459,
             "exited": false
         }
     ],
