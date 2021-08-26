@@ -1,9 +1,8 @@
-﻿using HourChallenge.Abstractions;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace HourChallenge
 {
-    public class PageNavigator : IPageNavigator
+    public class PageNavigator
     {
         public int Page { get; private set; } = 1;
         public int NumPages { get; private set; }
