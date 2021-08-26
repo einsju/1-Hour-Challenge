@@ -9,15 +9,10 @@ namespace HourChallenge
         [SerializeField] GameObject previousButton;
         [SerializeField] GameObject nextButton;
 
-        const float ItemsPerPage = 9f;
-
         IList<GameObject> PageComponents => GetComponentsInChildren<Transform>(true).Where(go => go.name.StartsWith("Page_")).Select(go => go.gameObject).ToList();
-
         GameObject CurrentPage => _pages[_pageNavigator.Page - 1];
-        int PageWithChallenge(int challengeNumber) => Mathf.CeilToInt(challengeNumber / ItemsPerPage);
 
         GameObject[] _pages;
-
         PageNavigator _pageNavigator;
 
         void Awake()
@@ -44,9 +39,9 @@ namespace HourChallenge
 
         public void OpenPageByChallenge(int challengeNumber)
         {
-            if (challengeNumber <= ItemsPerPage) return;
+            if (challengeNumber <= _pageNavigator.NumItemsPerPage) return;
             Deactivate(CurrentPage);
-            _pageNavigator.MoveToPage(PageWithChallenge(challengeNumber));
+            _pageNavigator.MoveToPageWithItem(challengeNumber);
             Activate(CurrentPage);
             HandleNavigationButtonState();
         }

@@ -1,3 +1,6 @@
+using HourChallenge.Abstractions;
+using HourChallenge.Handlers;
+using HourChallenge.Managers;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -6,21 +9,22 @@ namespace HourChallenge
 {
     public class Menu : MonoBehaviour
     {
-        [SerializeField] TMP_Text highscore;
+        [SerializeField] TMP_Text score;
         [SerializeField] ChallengePageNavigator pageNavigator;
 
         ChallengeButton CurrentChallengeButton => FindObjectsOfType<ChallengeButton>().First(cb => cb.ChallengeNumber == 1);
 
-        void Awake() => SetHighscore();
+        void Awake() => pageNavigator = GetComponent<ChallengePageNavigator>();
 
-        void SetHighscore() => highscore.text = $"SCORE: {122}";
+        //void SetHighscore() => highscore.text = $"SCORE: {122}";
 
         void Start() => SetCurrentChallenge();
 
         void SetCurrentChallenge()
         {
-            pageNavigator.OpenPageByChallenge(1);
-            CurrentChallengeButton.Activate();
+            ScoreEventHandler.OnScoreLoaded(0);
+            //pageNavigator.OpenPageByChallenge(1);
+            //CurrentChallengeButton.Activate();
         }
     }
 }

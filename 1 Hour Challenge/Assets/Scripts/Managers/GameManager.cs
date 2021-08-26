@@ -1,3 +1,4 @@
+using HourChallenge.Handlers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,12 +10,12 @@ namespace HourChallenge.Managers
 
         void OnEnable()
         {
-            EventManager.ChallengeAcceptedEventHandler += ChallengeAccepted;
+            ChallengeEventHandler.ChallengeAccepted += ChallengeAccepted;
         }
 
         void OnDisable()
         {
-            EventManager.ChallengeAcceptedEventHandler -= ChallengeAccepted;
+            ChallengeEventHandler.ChallengeAccepted -= ChallengeAccepted;
         }
 
         void ChallengeAccepted(int challengeNumber)

@@ -1,7 +1,7 @@
-using UnityEngine;
+using HourChallenge.Handlers;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using HourChallenge.Managers;
 
 namespace HourChallenge
 {
@@ -36,7 +36,7 @@ namespace HourChallenge
         void OnEnable() => _button.onClick.AddListener(ChallengeAccepted);
         void OnDisable() => _button.onClick.RemoveListener(ChallengeAccepted);
 
-        void ChallengeAccepted() => EventManager.OnChallengeAccepted(_challengeNumber);
+        void ChallengeAccepted() => ChallengeEventHandler.OnChallengeAccepted(_challengeNumber);
 
         public void Activate()
         {

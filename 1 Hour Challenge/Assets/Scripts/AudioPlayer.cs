@@ -1,4 +1,4 @@
-using HourChallenge.Managers;
+using HourChallenge.Handlers;
 using UnityEngine;
 
 namespace HourChallenge
@@ -7,6 +7,6 @@ namespace HourChallenge
     {
         [SerializeField] AudioClip audioClip;
 
-        protected void PlaySound() => EventManager.OnPlaySound(audioClip);
+        protected void PlaySound() => AudioEventHandler.OnPlaySound(audioClip);
     }
 }

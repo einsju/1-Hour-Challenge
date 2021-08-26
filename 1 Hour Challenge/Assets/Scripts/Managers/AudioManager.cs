@@ -1,3 +1,4 @@
+using HourChallenge.Handlers;
 using UnityEngine;
 
 namespace HourChallenge.Managers
@@ -14,12 +15,12 @@ namespace HourChallenge.Managers
 
         void EnableEvents()
         {
-            EventManager.PlaySoundEventHandler += PlaySound;
+            AudioEventHandler.PlaySound += PlaySound;
         }
 
         void DisableEvents()
         {
-            EventManager.PlaySoundEventHandler -= PlaySound;
+            AudioEventHandler.PlaySound -= PlaySound;
         }
 
         void PlaySound(AudioClip soundClip) => _audioSource.PlayOneShot(soundClip);

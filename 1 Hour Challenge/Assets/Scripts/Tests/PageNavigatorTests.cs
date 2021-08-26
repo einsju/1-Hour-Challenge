@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using UnityEngine;
 
 namespace HourChallenge
 {
@@ -28,12 +29,13 @@ namespace HourChallenge
         }
 
         [Test]
-        public void Should_Open_Page_On_MoveToPage()
+        public void Should_Open_Page_On_MoveToPageWithItem()
         {
             var pageNavigator = PageNavigator;
-            var page = 4;
+            var item = 12;
+            var page = Mathf.CeilToInt(item / pageNavigator.NumItemsPerPage);
 
-            pageNavigator.MoveToPage(page);
+            pageNavigator.MoveToPageWithItem(item);
 
             Assert.IsTrue(pageNavigator.Page == page);
         }
@@ -62,14 +64,15 @@ namespace HourChallenge
         }
 
         [TestCase(0)]
-        [TestCase(8)]
-        public void Should_Not_Open_Page_Outside_Boundaries_On_MoveToPage(int page)
+        [TestCase(64)]
+        public void Should_Not_Open_Page_Outside_Boundaries_On_MoveToPageWithItem(int item)
         {
             var pageNavigator = PageNavigator;
+            var page = pageNavigator.Page;
 
-            pageNavigator.MoveToPage(page);
+            pageNavigator.MoveToPageWithItem(item);
 
-            Assert.IsFalse(pageNavigator.Page == page);
+            Assert.IsTrue(pageNavigator.Page == page);
         }
     }
 }
