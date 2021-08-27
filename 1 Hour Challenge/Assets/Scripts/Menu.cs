@@ -1,4 +1,5 @@
 using HourChallenge.Handlers;
+using HourChallenge.Storage;
 using System.Linq;
 using UnityEngine;
 
@@ -8,17 +9,24 @@ namespace HourChallenge
     {
         [SerializeField] ChallengePageNavigator pageNavigator;
 
-        ChallengeButton CurrentChallengeButton => FindObjectsOfType<ChallengeButton>().First(cb => cb.ChallengeNumber == 1);
+        int _currentChallengeNumber;
 
-        void Awake() => pageNavigator = GetComponent<ChallengePageNavigator>();
+        ChallengeButton CurrentChallengeButton => FindObjectsOfType<ChallengeButton>().First(cb => cb.ChallengeNumber == _currentChallengeNumber);
 
-        void Start() => SetCurrentChallenge();
+        void Awake()
+        {
+            NotifyHighscore();
+            SetCurrentChallenge();
+        }
+
+        void NotifyHighscore() => ScoreEventHandler.OnHighscoreLoaded(GameProgressService.GetTotalScore());
 
         void SetCurrentChallenge()
         {
-            //ScoreEventHandler.OnHighscoreLoaded(158);
-            //pageNavigator.OpenPageByChallenge(1);
-            //CurrentChallengeButton.Activate();
+            var currentChallenge = GameProgressService.GetCurrentChallenge();
+            _currentChallengeNumber = currentChallenge != null ? currentChallenge.ChallengeNumber : 1;
+            pageNavigator.OpenPageByChallenge(_currentChallengeNumber);
+            CurrentChallengeButton.Activate();
         }
     }
 }

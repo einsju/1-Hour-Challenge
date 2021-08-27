@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace HourChallenge
 {
-    public class ChallengeServiceTests
+    public class GameProgressTests
     {
     }
 }
