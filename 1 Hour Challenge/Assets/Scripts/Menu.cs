@@ -20,7 +20,7 @@ namespace HourChallenge
 
         void SetCurrentChallenge()
         {
-            ScoreEventHandler.OnScoreLoaded(0);
+            ScoreEventHandler.OnHighscoreLoaded(0);
             //pageNavigator.OpenPageByChallenge(1);
             //CurrentChallengeButton.Activate();
         }

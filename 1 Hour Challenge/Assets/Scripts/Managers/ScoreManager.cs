@@ -8,9 +8,9 @@ namespace HourChallenge.Managers
     {
         [SerializeField] TMP_Text scoreText;
 
-        void OnEnable() => ScoreEventHandler.ScoreLoaded += ScoreLoaded;
-        void OnDisable() => ScoreEventHandler.ScoreLoaded -= ScoreLoaded;
+        void OnEnable() => ScoreEventHandler.HighscoreLoaded += HighscoreLoaded;
+        void OnDisable() => ScoreEventHandler.HighscoreLoaded -= HighscoreLoaded;
 
-        void ScoreLoaded(int score) => scoreText.text = $"SCORE: {score}";
+        void HighscoreLoaded(int score) => scoreText.text = $"HIGHSCORE: {score}";
     }
 }

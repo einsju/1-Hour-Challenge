@@ -4,8 +4,8 @@ namespace HourChallenge.Handlers
 {
     public abstract class ScoreEventHandler
     {
-        public static event Action<int> ScoreLoaded;
+        public static event Action<int> HighscoreLoaded;
 
-        public static void OnScoreLoaded(int score) => ScoreLoaded?.Invoke(score);
+        public static void OnHighscoreLoaded(int score) => HighscoreLoaded?.Invoke(score);
     }
 }
