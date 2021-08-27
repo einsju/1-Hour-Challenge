@@ -1,19 +1,27 @@
+using HourChallenge.Abstractions;
 using UnityEngine;
 
 namespace HourChallenge.Handlers
 {
-    public class InputHandler : MonoBehaviour
+    public class InputHandler : MonoBehaviour, IInputHandler
     {
-        public Vector3 Position => Input.mousePosition;
+        [SerializeField] float minimumSwipeDistance = 75f;
+
+        Vector3 _lastPosition = Vector3.zero;
+
         public bool Touched => Input.GetMouseButtonDown(0);
-        public bool Released => Input.GetMouseButtonUp(0);
-        public Vector3 LastPosition { get; private set; } = Vector3.zero;
+        public bool SwipedUp => SwipeAccepted && Position.y > _lastPosition.y;
+        public bool SwipedDown => SwipeAccepted && Position.y < _lastPosition.y;
+
+        bool SwipeAccepted => Released && Mathf.Abs(Position.y - _lastPosition.y) >= minimumSwipeDistance;
+        bool Released => Input.GetMouseButtonUp(0);
+        Vector3 Position => Input.mousePosition;
 
         void Update()
         {
             if (Touched) SaveLastPosition();
         }
 
-        void SaveLastPosition() => LastPosition = Input.mousePosition;
+        void SaveLastPosition() => _lastPosition = Input.mousePosition;
     }
 }

@@ -2,9 +2,9 @@ using HourChallenge.Handlers;
 using TMPro;
 using UnityEngine;
 
-namespace HourChallenge.Managers
+namespace HourChallenge
 {
-    public class ScoreManager : MonoBehaviour
+    public class Highscore : MonoBehaviour
     {
         [SerializeField] TMP_Text scoreText;
 
