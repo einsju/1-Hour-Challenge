@@ -1,3 +1,4 @@
+using HourChallenge.Storage;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace HourChallenge
         {
             _pages = PageComponents.ToArray();
             _pageNavigator = new PageNavigator(_pages.Length);
+            OpenPageByChallenge();
         }
 
         public void Previous()
@@ -37,11 +39,12 @@ namespace HourChallenge
             HandleNavigationButtonState();
         }
 
-        public void OpenPageByChallenge(int challengeNumber)
+        public void OpenPageByChallenge()
         {
-            if (challengeNumber <= _pageNavigator.NumItemsPerPage) return;
+            var currentChallenge = Preferences.CurrentChallenge;
+            if (currentChallenge <= _pageNavigator.NumItemsPerPage) return;
             Deactivate(CurrentPage);
-            _pageNavigator.MoveToPageWithItem(challengeNumber);
+            _pageNavigator.MoveToPageWithItem(currentChallenge);
             Activate(CurrentPage);
             HandleNavigationButtonState();
         }

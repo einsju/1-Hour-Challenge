@@ -33,7 +33,7 @@ namespace HourChallenge
         {
             var pageNavigator = PageNavigator;
             var item = 12;
-            var page = Mathf.CeilToInt(item / pageNavigator.NumItemsPerPage);
+            var page = Mathf.CeilToInt((float)item / pageNavigator.NumItemsPerPage);
 
             pageNavigator.MoveToPageWithItem(item);
 

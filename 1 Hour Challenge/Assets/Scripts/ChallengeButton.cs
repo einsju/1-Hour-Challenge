@@ -1,4 +1,5 @@
 using HourChallenge.Handlers;
+using HourChallenge.Storage;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +32,8 @@ namespace HourChallenge
             locked.SetActive(ChallengeIsLocked);
             video.SetActive(ChallengeIsLocked);
             buttonText.text = ButtonText;
+
+            if (_challengeNumber == Preferences.CurrentChallenge) Activate();
         }
 
         void OnEnable() => _button.onClick.AddListener(ChallengeAccepted);

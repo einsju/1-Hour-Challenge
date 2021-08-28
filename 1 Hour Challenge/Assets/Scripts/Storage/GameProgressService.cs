@@ -6,8 +6,6 @@ namespace HourChallenge.Storage
 {
     public class GameProgressService : MonoBehaviour
     {
-        public static Challenge GetCurrentChallenge() => GameProgress.Get().LastOrDefault();
-
         public static int GetTotalScore() => GameProgress.Get().Sum(gp => gp.Score);
 
         public static IEnumerable<Challenge> GetAllChallenges() => GameProgress.Get().OrderBy(gp => gp.ChallengeNumber);

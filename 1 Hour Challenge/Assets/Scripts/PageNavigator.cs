@@ -11,7 +11,7 @@ namespace HourChallenge
         public bool IsFirstPage => Page == 1;
         public bool IsLastPage => Page == NumPages;
 
-        int PageWithItem(int item) => Mathf.CeilToInt(item / NumItemsPerPage);
+        int PageWithItem(int item) => Mathf.CeilToInt((float)item / NumItemsPerPage);
 
         public PageNavigator(int numPages, int numItemsPerPage = 9)
         {

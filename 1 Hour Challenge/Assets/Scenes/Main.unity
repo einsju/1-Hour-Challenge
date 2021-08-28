@@ -5602,7 +5602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6fc79e37d6dd5439695bf093ba953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumDragDistance: 75
 --- !u!114 &921128502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5615,6 +5614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d06d6e9a8d22cf4b917f5f757cdf2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimumSwipeDistance: 75
 --- !u!1001 &942045139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7925,8 +7925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aaff992d8ea0174680c12cc2cd108aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 0}
-  pageNavigator: {fileID: 0}
+  pageNavigator: {fileID: 921128500}
 --- !u!1001 &1291769062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11141,7 +11140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HIGHSCORE: 0'
+  m_text: 'SCORE: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5aa116ab1aa24d441bc8a3661bc65b34, type: 2}
   m_sharedMaterial: {fileID: -7600741532229346453, guid: 5aa116ab1aa24d441bc8a3661bc65b34,
