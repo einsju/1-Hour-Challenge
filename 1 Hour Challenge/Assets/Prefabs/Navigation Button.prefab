@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 7599887027855831892}
   - component: {fileID: 220487211316362827}
   - component: {fileID: 8939737546444584874}
+  - component: {fileID: 8133409022157734880}
   m_Layer: 5
   m_Name: Navigation Button
   m_TagString: Untagged
@@ -272,3 +273,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8133409022157734880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287674992870502790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86a2ac4f38940c4c9ddd9a1844eb0ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 265b6b3f79b54924795b8b70afa7cf1a, type: 3}

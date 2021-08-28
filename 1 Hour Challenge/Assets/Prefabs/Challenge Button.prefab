@@ -274,8 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectDistance: {x: 2, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!114 &3544019031269149224
 MonoBehaviour:
@@ -293,7 +293,7 @@ MonoBehaviour:
   scoreText: {fileID: 1014925715163901106}
   locked: {fileID: 2827430006286419287}
   video: {fileID: 4775864028026747491}
-  activationColor: {r: 0, g: 0.78431374, b: 0.972549, a: 0.19607843}
+  activationColor: {r: 0, g: 0.78431374, b: 0.972549, a: 0.39215687}
 --- !u!114 &1933997952717739432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4282865658
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

@@ -54,8 +54,7 @@ namespace HourChallenge
         IEnumerator PageTransition(Vector3 from, Vector3 to)
         {
             CurrentPage.transform.localScale = from;
-            //LeanTween.alpha(CurrentPage, to, animationDuration);
-            LeanTween.alpha(CurrentPage, 0f, animationDuration);
+            CurrentPage.LeanScale(to, animationDuration);
             yield return new WaitForSeconds(animationDuration);
             CurrentPage.transform.localScale = Vector3.one;
         }

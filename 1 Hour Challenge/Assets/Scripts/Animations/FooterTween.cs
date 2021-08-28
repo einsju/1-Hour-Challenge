@@ -8,6 +8,6 @@ namespace HourChallenge.Animations
         
         void Awake() => transform.position = new Vector2(transform.position.x, transform.position.y -100f);
 
-        void Start() => transform.LeanMoveY(0f, duration).setEaseInOutBounce();
+        void Start() => transform.LeanMoveY(0f, duration).setEaseOutBounce();
     }
 }

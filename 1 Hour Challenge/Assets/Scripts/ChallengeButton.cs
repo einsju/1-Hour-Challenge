@@ -23,12 +23,13 @@ namespace HourChallenge
         string ButtonText => TextIsNumber ? gameObject.name : "";
         bool IsCurrent => _challengeNumber == Preferences.CurrentChallenge;
         bool HasPlayedOrIsPlaying => IsCurrent || _challenge != null;
+        Color NotActiveColor => new Color(buttonText.color.r, buttonText.color.g, buttonText.color.b, 0.025f);
 
         void Awake()
         {
             _challengeNumber = int.Parse(ButtonText);
             _challenge = GameProgressService.GetChallenge(_challengeNumber);
-            _button = GetComponent<Button>();            
+            _button = GetComponent<Button>();
             Initialize();
         }
 
@@ -41,6 +42,7 @@ namespace HourChallenge
             buttonText.text = ButtonText;
 
             if (IsCurrent) Highlight();
+            if (!HasPlayedOrIsPlaying) buttonText.color = NotActiveColor;
         }
 
         public void Highlight()
