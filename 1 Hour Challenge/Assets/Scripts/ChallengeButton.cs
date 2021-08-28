@@ -9,42 +9,49 @@ namespace HourChallenge
     [ExecuteAlways]
     public class ChallengeButton : MonoBehaviour
     {
-        [SerializeField] GameObject locked;
         [SerializeField] TMP_Text buttonText;
+        [SerializeField] TMP_Text scoreText;
+        [SerializeField] GameObject locked;        
         [SerializeField] GameObject video;
         [SerializeField] Color activationColor;
 
-        public int ChallengeNumber => _challengeNumber;
-
         Button _button;
+        Challenge _challenge;
         int _challengeNumber;
 
         bool TextIsNumber => int.TryParse(gameObject.name, out _);
         string ButtonText => TextIsNumber ? gameObject.name : "";
-        bool ChallengeIsLocked => _challengeNumber > 1;
+        bool IsCurrent => _challengeNumber == Preferences.CurrentChallenge;
+        bool HasPlayedOrIsPlaying => IsCurrent || _challenge != null;
 
-        void Awake() => InitializeButton();
-
-        void InitializeButton()
+        void Awake()
         {
-            _button = GetComponent<Button>();
             _challengeNumber = int.Parse(ButtonText);
-            locked.SetActive(ChallengeIsLocked);
-            video.SetActive(ChallengeIsLocked);
-            buttonText.text = ButtonText;
-
-            if (_challengeNumber == Preferences.CurrentChallenge) Activate();
+            _challenge = GameProgressService.GetChallenge(_challengeNumber);
+            _button = GetComponent<Button>();            
+            Initialize();
         }
 
-        void OnEnable() => _button.onClick.AddListener(ChallengeAccepted);
-        void OnDisable() => _button.onClick.RemoveListener(ChallengeAccepted);
+        void Initialize()
+        {
+            locked.SetActive(!HasPlayedOrIsPlaying);
+            video.SetActive(!HasPlayedOrIsPlaying);
+            scoreText.gameObject.SetActive(HasPlayedOrIsPlaying);
+            scoreText.text = $"{_challenge?.Score}";
+            buttonText.text = ButtonText;
 
-        void ChallengeAccepted() => ChallengeEventHandler.OnChallengeAccepted(_challengeNumber);
+            if (IsCurrent) Highlight();
+        }
 
-        public void Activate()
+        public void Highlight()
         {
             var shadow = GetComponent<Shadow>();
             shadow.effectColor = activationColor;
         }
+
+        void OnEnable() => _button.onClick.AddListener(AcceptChallenge);
+        void OnDisable() => _button.onClick.RemoveListener(AcceptChallenge);
+
+        void AcceptChallenge() => ChallengeEventHandler.OnChallengeAccepted(_challengeNumber);        
     }
 }

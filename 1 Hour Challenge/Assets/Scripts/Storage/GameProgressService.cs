@@ -8,6 +8,8 @@ namespace HourChallenge.Storage
     {
         public static int GetTotalScore() => GameProgress.Get().Sum(gp => gp.Score);
 
+        public static Challenge GetChallenge(int challengeNumber) => GameProgress.Get(challengeNumber);
+
         public static IEnumerable<Challenge> GetAllChallenges() => GameProgress.Get().OrderBy(gp => gp.ChallengeNumber);
 
         public static void AddOrUpdateChallenge(int challengeNumber, bool completed = true, int score = 0, int rating = 1)
