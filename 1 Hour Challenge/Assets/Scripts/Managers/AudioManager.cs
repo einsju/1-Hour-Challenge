@@ -1,4 +1,5 @@
 using HourChallenge.Handlers;
+using HourChallenge.Storage;
 using UnityEngine;
 
 namespace HourChallenge.Managers
@@ -7,22 +8,33 @@ namespace HourChallenge.Managers
     public class AudioManager : MonoBehaviour
     {
         AudioSource _audioSource;
+        bool _hasAudio;
+        //bool _hasMusic;
 
-        void Awake() => _audioSource = GetComponent<AudioSource>();
-            
-        void OnEnable() => EnableEvents();
-        void OnDisable() => DisableEvents();
+        void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+            _hasAudio = Preferences.HasAudio;
+        }
 
-        void EnableEvents()
+        void OnEnable()
         {
             AudioEventHandler.PlaySound += PlaySound;
+            AudioEventHandler.SoundOptionChanged += SoundOptionChanged;
         }
 
-        void DisableEvents()
+        void OnDisable()
         {
             AudioEventHandler.PlaySound -= PlaySound;
+            AudioEventHandler.SoundOptionChanged -= SoundOptionChanged;
         }
 
-        void PlaySound(AudioClip soundClip) => _audioSource.PlayOneShot(soundClip);
+        void PlaySound(AudioClip soundClip)
+        {
+            if (!_hasAudio) return;
+            _audioSource.PlayOneShot(soundClip);
+        }
+
+        void SoundOptionChanged(bool value) => _hasAudio = value;
     }
 }
