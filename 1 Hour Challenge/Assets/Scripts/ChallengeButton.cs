@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 namespace HourChallenge
 {
-    [ExecuteAlways]
     public class ChallengeButton : MonoBehaviour
     {
         [SerializeField] TMP_Text buttonText;
@@ -54,6 +53,6 @@ namespace HourChallenge
         void OnEnable() => _button.onClick.AddListener(AcceptChallenge);
         void OnDisable() => _button.onClick.RemoveListener(AcceptChallenge);
 
-        void AcceptChallenge() => ChallengeEventHandler.OnChallengeAccepted(_challengeNumber);        
+        void AcceptChallenge() => ChallengeEventHandler.OnChallengeAccepted(_challengeNumber);
     }
 }
