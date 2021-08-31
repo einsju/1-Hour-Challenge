@@ -46,5 +46,11 @@ namespace HourChallenge
         void SetMusicButtonIcon() => musicIcon.sprite = _hasMusic ? musicOn : musicOff;
 
         public void OnPrivacy() => Application.OpenURL("https://sjureinarsen.wixsite.com/hourchallenge/privacypolicy");
+
+        public void OnRestart()
+        {
+            GameProgressService.RestartGame();
+            ChallengeEventHandler.OnChallengeAccepted(1);
+        }
     }
 }

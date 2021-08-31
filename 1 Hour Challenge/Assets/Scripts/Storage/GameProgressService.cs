@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using HourChallenge.Abstractions;
 using System.Linq;
 using UnityEngine;
 
@@ -6,27 +6,32 @@ namespace HourChallenge.Storage
 {
     public class GameProgressService : MonoBehaviour
     {
-        public static int GetTotalScore() => GameProgress.Get().Sum(gp => gp.Score);
+        static IGameProgress _gameProgress = FindObjectsOfType<MonoBehaviour>().OfType<IGameProgress>().Single();
 
-        public static Challenge GetChallenge(int challengeNumber) => GameProgress.Get(challengeNumber);
+        public static int GetTotalScore() => _gameProgress.GetChallenges().Sum(gp => gp.Score);
 
-        public static IEnumerable<Challenge> GetAllChallenges() => GameProgress.Get().OrderBy(gp => gp.ChallengeNumber);
+        public static Challenge GetChallenge(int challengeNumber) => _gameProgress.GetChallenge(challengeNumber);
 
-        public static void AddOrUpdateChallenge(int challengeNumber, bool completed = true, int score = 0, int rating = 1)
+        public static void AddChallenge(int challengeNumber) => _gameProgress.AddChallenge(new Challenge { ChallengeNumber = challengeNumber });
+
+        public static void UpdateChallenge(int challengeNumber, int score)
         {
-            var challenge = GameProgress.Get(challengeNumber);
-            if (challenge != null) { UpdateChallenge(challenge, completed, score); return; };
-            AddChallenge(challengeNumber, completed, score);
-        }
-
-        static void AddChallenge(int challengeNumber, bool completed, int score) =>
-            GameProgress.Add(new Challenge { ChallengeNumber = challengeNumber, Completed = completed, Score = score });
-
-        static void UpdateChallenge(Challenge challenge, bool completed, int score)
-        {
-            challenge.Completed = completed;
+            if (score == 0) return;
+            var challenge = GetChallenge(challengeNumber);
+            if (challenge is null || score <= challenge.Score) return;
             challenge.Score = score;
-            GameProgress.Update(challenge);
+            _gameProgress.UpdateChallenge(challenge);
         }
+
+        public static void CompleteChallenge(int challengeNumber, int score)
+        {
+            var challenge = GetChallenge(challengeNumber);
+            if (challenge is null) return;
+            if (score > challenge.Score) challenge.Score = score;
+            challenge.Completed = true;
+            _gameProgress.UpdateChallenge(challenge);
+        }
+
+        public static void RestartGame() => _gameProgress.ClearGameProgress();
     }
 }

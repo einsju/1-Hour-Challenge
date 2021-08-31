@@ -1,4 +1,5 @@
 using HourChallenge.Handlers;
+using HourChallenge.Storage;
 using UnityEngine;
 
 namespace HourChallenge.Managers
@@ -19,6 +20,7 @@ namespace HourChallenge.Managers
 
         void ChallengeAccepted(int challengeNumber)
         {
+            Preferences.SetCurrentChallenge(challengeNumber);
             SceneLoader.LoadScene($"{ChallengeSceneNamePrefix}{challengeNumber}");
         }
     }
