@@ -3,8 +3,8 @@
     "m_SelectedPackage": {
         "deviceId": "LHS0218A10002422",
         "name": "com.einarsen.hourchallenge",
-        "processId": 7959,
-        "exited": false
+        "processId": 14541,
+        "exited": true
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
@@ -151,6 +151,18 @@
             "name": "com.einarsen.hourchallenge",
             "processId": 7959,
             "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 12985,
+            "exited": true
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 14541,
+            "exited": true
         }
     ],
     "m_Tags": {
