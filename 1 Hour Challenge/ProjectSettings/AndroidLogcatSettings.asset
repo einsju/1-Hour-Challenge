@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "LHS0218A10002422",
         "name": "com.einarsen.hourchallenge",
-        "processId": 16444,
+        "processId": 7959,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -48,6 +48,108 @@
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
             "processId": 16444,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 5806,
+            "exited": true
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 13473,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 15733,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 16925,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 4584,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 9457,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 10167,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 10709,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 11880,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 12751,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 14040,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 15663,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 23111,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 27193,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 4156,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 6990,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.einarsen.hourchallenge",
+            "processId": 7959,
             "exited": false
         }
     ],

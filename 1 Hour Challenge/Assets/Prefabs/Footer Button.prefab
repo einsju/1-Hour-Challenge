@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 8834818750490465654}
   - component: {fileID: 716784758807217051}
   - component: {fileID: 950487981327514310}
+  - component: {fileID: 5901841651560553245}
   m_Layer: 5
   m_Name: Footer Button
   m_TagString: Untagged
@@ -137,14 +138,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16078432, g: 0.1764706, b: 0.20784315, a: 1}
+  m_Color: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.019607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 08d919229a01a274b9c0b07aaddfbc1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4c548a339b4d41a590928c0c98934a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -210,8 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
-  m_EffectDistance: {x: -2, y: 1}
+  m_EffectColor: {r: 0, g: 0.78431374, b: 0.972549, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!114 &950487981327514310
 MonoBehaviour:
@@ -226,3 +227,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 265b6b3f79b54924795b8b70afa7cf1a, type: 3}
+--- !u!114 &5901841651560553245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2469447892923712190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a4f6acc012f57449082a671d30108e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

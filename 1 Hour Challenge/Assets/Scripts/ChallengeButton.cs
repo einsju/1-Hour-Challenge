@@ -26,9 +26,13 @@ namespace HourChallenge
 
         void Awake()
         {
-            _challengeNumber = int.Parse(ButtonText);
-            _challenge = GameProgressService.GetChallenge(_challengeNumber);
             _button = GetComponent<Button>();
+            _challengeNumber = int.Parse(ButtonText);            
+        }
+
+        void Start()
+        {
+            _challenge = GameProgressService.GetChallenge(_challengeNumber);
             Initialize();
         }
 

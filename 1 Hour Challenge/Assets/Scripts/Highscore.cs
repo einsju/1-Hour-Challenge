@@ -8,6 +8,6 @@ namespace HourChallenge
     {
         [SerializeField] TMP_Text scoreText;
 
-        void Awake() => scoreText.text = $"YOUR SCORE: {GameProgressService.GetTotalScore()}";
+        void Start() => scoreText.text = $"YOUR SCORE: {GameProgressService.GetTotalScore()}";
     }
 }

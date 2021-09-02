@@ -52,5 +52,7 @@ namespace HourChallenge
             GameProgressService.RestartGame();
             ChallengeEventHandler.OnChallengeAccepted(1);
         }
+
+        public void OnQuit() => Application.Quit();
     }
 }
