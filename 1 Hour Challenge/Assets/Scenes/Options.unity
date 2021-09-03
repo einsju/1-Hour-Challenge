@@ -6840,6 +6840,8 @@ MonoBehaviour:
   musicIcon: {fileID: 280586634}
   musicOn: {fileID: 21300000, guid: ef5f05ff229353c4cb1cd9c444b81c4b, type: 3}
   musicOff: {fileID: 21300000, guid: 417083c4745d2824386ea8edc46019d6, type: 3}
+  switchedOn: {r: 0.16078432, g: 0.1764706, b: 0.20784315, a: 1}
+  switchedOff: {r: 0.827451, g: 0.18431373, b: 0.18431373, a: 1}
 --- !u!1 &1383828582
 GameObject:
   m_ObjectHideFlags: 0

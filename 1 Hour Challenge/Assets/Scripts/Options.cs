@@ -13,6 +13,8 @@ namespace HourChallenge
         [SerializeField] Image musicIcon;
         [SerializeField] Sprite musicOn;
         [SerializeField] Sprite musicOff;
+        [SerializeField] Color switchedOn;
+        [SerializeField] Color switchedOff;
 
         bool _hasAudio;
         bool _hasMusic;
@@ -42,8 +44,17 @@ namespace HourChallenge
             AudioEventHandler.OnMusicOptionChanged(_hasMusic);
         }
 
-        void SetAudioButtonIcon() => soundIcon.sprite = _hasAudio ? soundOn : soundOff;
-        void SetMusicButtonIcon() => musicIcon.sprite = _hasMusic ? musicOn : musicOff;
+        void SetAudioButtonIcon()
+        {
+            soundIcon.sprite = _hasAudio ? soundOn : soundOff;
+            soundIcon.color = _hasAudio ? switchedOn : switchedOff;
+        }
+
+        void SetMusicButtonIcon()
+        {
+            musicIcon.sprite = _hasMusic ? musicOn : musicOff;
+            musicIcon.color = _hasMusic ? switchedOn : switchedOff;
+        }
 
         public void OnPrivacy() => Application.OpenURL("https://sjureinarsen.wixsite.com/hourchallenge/privacypolicy");
 
