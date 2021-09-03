@@ -56,6 +56,8 @@ namespace HourChallenge
             musicIcon.color = _hasMusic ? switchedOn : switchedOff;
         }
 
+        public void OnRate() => Application.OpenURL("market://details?id=com.einarsen.hourchallenge");
+
         public void OnPrivacy() => Application.OpenURL("https://sjureinarsen.wixsite.com/hourchallenge/privacypolicy");
 
         public void OnRestart()
