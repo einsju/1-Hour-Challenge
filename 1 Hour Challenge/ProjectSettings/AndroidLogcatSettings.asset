@@ -1,157 +1,13 @@
 {
     "m_SelectedDeviceId": "LHS0218A10002422",
     "m_SelectedPackage": {
-        "deviceId": "LHS0218A10002422",
-        "name": "com.einarsen.hourchallenge",
-        "processId": 30899,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 9975,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 16733,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 4849,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 9222,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 10055,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 14456,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 16444,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 5806,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 13473,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 15733,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 16925,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 4584,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 9457,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 10167,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 10709,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 11880,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 12751,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 14040,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 15663,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 23111,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 27193,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 4156,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 6990,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS0218A10002422",
-            "name": "com.einarsen.hourchallenge",
-            "processId": 7959,
-            "exited": false
-        },
         {
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
@@ -174,12 +30,18 @@
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
             "processId": 29639,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "LHS0218A10002422",
             "name": "com.einarsen.hourchallenge",
             "processId": 30899,
+            "exited": true
+        },
+        {
+            "deviceId": "LHS0218A10002422",
+            "name": "com.huawei.android.launcher",
+            "processId": 2741,
             "exited": false
         }
     ],
